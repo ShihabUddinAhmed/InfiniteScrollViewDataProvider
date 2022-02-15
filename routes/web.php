@@ -14,4 +14,4 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::get('/Student-List', [StudentController::class, 'studentList']);
+//Route::get('/Student-List', [StudentController::class, 'studentList']);
