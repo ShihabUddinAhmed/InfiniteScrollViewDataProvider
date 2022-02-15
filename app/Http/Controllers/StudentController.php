@@ -10,7 +10,8 @@ class StudentController extends Controller
     public function studentList(Request $req)
     {
         $pageNumber = $req->pageNumber;
-        $users = Student::all()->skip(($pageNumber-1)*20)->take(20);
-        return $users;
+        $users = Student::offset(($pageNumber-1)*20)->limit(20)->get();
+        $count = Student::count();
+        return response()->json(['students'=>$users, 'count'=>$count]);
     }
 }
